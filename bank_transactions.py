@@ -62,3 +62,5 @@ while True:
         print("*" * 40)
         print("{:^40}".format("INVALID SELECTION"))
 
+        sleep
+os.system('cls' if os.name == 'nt' else 'clear')
