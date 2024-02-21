@@ -10,8 +10,8 @@ import pprint
 # Defining an empty dictionary to store the contents of the input file
 account_balances = {}
 
-# Open the input file named account_balances.txt in read mode using a context manager (with clause)
-with open('account_balances.txt', 'r') as file:
+# Open the input file named account_balances (1).txt in read mode using a context manager (with clause)
+with open('account_balances (1).txt', 'r') as file:
     # Create a CSV reader object with pipe delimiter
     reader = csv.reader(file, delimiter='|')
 
@@ -50,4 +50,22 @@ for account_number, balance in account_balances.items():
 # Displaying the contents of the Dictionary after applying interest
 print("\nBalances After Applying Interest/Charges:") 
 pprint.pprint(account_balances)
+
+# Defining teh filename based on the format that is provided
+filename = "updated_balances_FL.csv" # Repalce "FL" with your first and last initials
+
+# Opening teh CSV file in write mode using a context manager
+with open (filename, 'w', newline='') as file:
+    # Defining teh CSV writer object
+    writer = csv.writer(file)
+
+    # Writing the headings for the file
+    writer.writerow(["Account", "Balance"])
+
+    # Writing the updated account balances to the CSV file
+    for account, balnace in account_balances.items():
+        writer.writerow({account, balance})
+
+# Printing a message that indicates successful writing of data
+print(f"Data has been written to {filename}")
 
