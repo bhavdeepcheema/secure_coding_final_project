@@ -80,4 +80,3 @@ with open(filename, 'r') as file:
     # Print the contents of the file to the console
     for row in reader:
         print(row)
-        
