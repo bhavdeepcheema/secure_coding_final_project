@@ -26,4 +26,28 @@ with open('account_balances.txt', 'r') as file:
 # Displaying the contents of the Dictionarybefore applying interest
         print("Curent Balance (Before Interest):")
         pprint.pprint(account_balances)
+
+# Iterate through the dictionary of bank records to calculate and update the balances with interest/charges
         
+for account_number, balance in account_balances.items():
+    if balance > 0:
+        if balance < 1000:
+            interest_rate = 0.01
+        elif balance < 6000:
+            interest_rate = 0.025
+        else:
+            interest_rate = 0.05
+    else:
+        interest_rate = 0.1
+
+    # Applying mothly interest or charge
+    interest = (balance * interest_rate) / 12
+    balance += interest
+
+    # Updating the balance in the Dictionary
+    account_balances[account_number] = balance
+
+# Displaying the contents of the Dictionary after applying interest
+print("\nBalances After Applying Interest/Charges:") 
+pprint.pprint(account_balances)
+
