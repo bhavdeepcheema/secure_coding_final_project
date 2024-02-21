@@ -69,3 +69,15 @@ with open (filename, 'w', newline='') as file:
 # Printing a message that indicates successful writing of data
 print(f"Data has been written to {filename}")
 
+# filename of the CSV file
+filename = "updated_balances_FL.csv" # Replace "FL" with your first and last initials
+
+# Opening the CSV file in read mode
+with open(filename, 'r') as file:
+    # Creating a DictReader object
+    reader = csv.DictReader(file)
+
+    # Print the contents of the file to the console
+    for row in reader:
+        print(row)
+        
