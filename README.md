@@ -15,3 +15,5 @@ This program basically tries to stimulate an ATM for the PiXELL River Financial 
 
 ## interest_update.py
 This file automates and contains the interest rate calculations and updates for the bank account based on user-defined criteria. It permits for personalization of interest rates by account type and tracks the changes for auditing.
+
+## I have created this new repo for the secure coding and testing final project and have added jasleen kaur as a collabortor and for her to give peer review.
